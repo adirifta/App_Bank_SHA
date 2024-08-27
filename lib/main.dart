@@ -1,3 +1,10 @@
+import 'package:bank_sha/ui/pages/home_page.dart';
+import 'package:bank_sha/ui/pages/onboarding_page.dart';
+import 'package:bank_sha/ui/pages/sign_in_page.dart';
+import 'package:bank_sha/ui/pages/sign_up_page.dart';
+import 'package:bank_sha/ui/pages/sign_up_set_ktp_page.dart';
+import 'package:bank_sha/ui/pages/sign_up_set_profile_page.dart';
+import 'package:bank_sha/ui/pages/sign_up_succses_page.dart';
 import 'package:bank_sha/ui/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,11 +15,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       //Menghilangkan nama debug dikanan atas
       debugShowCheckedModeBanner: false,
 
-      home: SplashPage(),
+      routes: {
+        '/': (context) => const SplashPage(),
+        '/onboarding': (context) => const OnboardingPage(),
+        '/sign-in': (context) => const SignInPage(),
+        '/sign-up': (context) => const SignUpPage(),
+        '/sign-up-set-profile': (context) => const SignUpSetProfilePage(),
+        '/sign-up-set-ktp': (context) => const SignUpSetKtpPage(),
+        '/sign-up-success': (context) => const SignUpSuccsesPage(),
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }
